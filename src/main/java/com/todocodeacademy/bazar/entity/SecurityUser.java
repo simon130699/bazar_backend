@@ -14,6 +14,7 @@ import java.util.Collections;
 public class SecurityUser implements UserDetails {
 
     private User user;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(user.getRole()));
@@ -28,4 +29,5 @@ public class SecurityUser implements UserDetails {
     public String getUsername() {
         return user.getUsername();
     }
+
 }
